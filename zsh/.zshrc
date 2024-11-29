@@ -89,3 +89,13 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Clear terminal at the end
 clear
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# Omakub Configurations
+export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:$PATH"
+export OMAKUB_PATH="$HOME/.local/share/omakub"
+
+
+# Editor used by CLI
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
+
