@@ -161,3 +161,7 @@ export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Update PATH to reflect Ubuntu defaults and your tools
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+
