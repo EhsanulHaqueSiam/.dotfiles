@@ -165,3 +165,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Update PATH to reflect Ubuntu defaults and your tools
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/nushell/target/release:$PATH"
