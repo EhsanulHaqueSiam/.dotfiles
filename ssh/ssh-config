@@ -6,8 +6,3 @@ Host *
   AddressFamily inet
   ServerAliveInterval 15
   ConnectTimeout 20
-
-Host bastion
-    User ec2-user
-    Hostname bastion.domain.com
-    IdentityFile ~/.ssh/id_rsa

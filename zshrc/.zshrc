@@ -5,6 +5,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
+export PATH="$HOME/.local/bin:$PATH"
 source <(kubectl completion zsh)
 complete -C '/usr/local/bin/aws_completer' aws
 
@@ -22,7 +23,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 zinit light zsh-users/zsh-autosuggestions
 
-source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^w' autosuggest-execute
 bindkey '^e' autosuggest-accept
 bindkey '^u' autosuggest-toggle
@@ -122,24 +123,26 @@ alias fuzz='ffuf -w ~/hacking/SecLists/content_discovery_all.txt -mc all -u'
 alias gr='~/go/src/github.com/tomnomnom/gf/gf'
 
 ### FZF ###
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Brew environment setup
-if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
 
-# Zsh-Autosuggestions
-if [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-    source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    bindkey '^w' autosuggest-execute
-    bindkey '^e' autosuggest-accept
-    bindkey '^u' autosuggest-toggle
-fi
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 
-# PATH adjustments
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+# # Brew environment setup
+# if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+#     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# fi
+
+# # Zsh-Autosuggestions
+# if [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+#     source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+#     bindkey '^w' autosuggest-execute
+#     bindkey '^e' autosuggest-accept
+#     bindkey '^u' autosuggest-toggle
+# fi
+
+# # PATH adjustments
+# export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 alias mat='osascript -e "tell application \"System Events\" to key code 126 using {command down}" && tmux neww "cmatrix"'
@@ -191,6 +194,15 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 . "$HOME/.atuin/bin/env"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export PATH=$PATH:/snap/bin
+
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 eval "$(direnv hook zsh)"
+
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/usr/local/go/bin
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH=$PATH:/usr/bin/node
+export PATH=$PATH:/usr/bin/python3
+export PATH="$HOME/.local/bin:$PATH"
