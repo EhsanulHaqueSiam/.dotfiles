@@ -155,3 +155,31 @@ cx() { cd "$@" && l; }
 fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
 f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
 fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+
+# fnm
+FNM_PATH="/home/heisenberg/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/heisenberg/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+for dir in "/root/.local/share/JetBrains/Toolbox/apps/*/bin"; do
+    export PATH="$PATH:$dir"
+done
+
+
+export PATH="/usr/local/bin:$PATH"
+
+export VCPKG_ROOT="$HOME/vcpkg"
+export PATH="$VCPKG_ROOT:$PATH"
+
+export EDITOR=nvim
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
