@@ -7,8 +7,8 @@ return {
 	font = wezterm.font('JetBrains Mono'),
 	-- macos_window_background_blur = 40,
 	macos_window_background_blur = 30,
-	
-	-- window_background_image = '/home/heisenberg/Downloads/3840x1080-Wallpaper-041.jpg',
+
+	-- window_background_image = '$HOME/Downloads/3840x1080-Wallpaper-041.jpg',
 	-- window_background_image_hsb = {
 	-- 	brightness = 0.01,
 	-- 	hue = 1.0,
