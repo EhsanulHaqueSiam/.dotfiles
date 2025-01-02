@@ -14,6 +14,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/bin/node
 export PATH=$PATH:/usr/bin/python3
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 
 # Starship Configuration
 eval "$(starship init zsh)"
@@ -60,6 +62,10 @@ alias ga='git add -p'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
+
+# ExpressVPN Aliases
+alias evpnc='expressvpn connect'
+alias evpnd='expressvpn disconnect'
 
 # Docker Aliases
 alias dco="docker compose"
@@ -183,3 +189,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+# Ghostty alias
+alias ghostty="$HOME/.local/bin/ghostty"
+
