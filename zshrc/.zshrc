@@ -117,6 +117,7 @@ alias ke="kubectl exec -it"
 alias kcns='kubectl config set-context --current --namespace'
 
 # ExpressVPN Aliases
+alias vpn="expressvpn"
 alias vpnon="expressvpn connect"
 alias vpnoff="expressvpn disconnect"
 alias vpnstatus="expressvpn status"
