@@ -182,4 +182,3 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
-fnm completions --shell <SHELL>
