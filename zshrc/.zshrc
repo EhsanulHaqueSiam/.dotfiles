@@ -101,21 +101,28 @@ alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
 # Kubernetes (K8S)
-# Uncomment if needed
-# export KUBECONFIG=~/.kube/config
-# alias k="kubectl"
-# alias ka="kubectl apply -f"
-# alias kg="kubectl get"
-# alias kd="kubectl describe"
-# alias kdel="kubectl delete"
-# alias kl="kubectl logs"
-# alias kgpo="kubectl get pod"
-# alias kgd="kubectl get deployments"
-# alias kc="kubectx"
-# alias kns="kubens"
-# alias kl="kubectl logs -f"
-# alias ke="kubectl exec -it"
-# alias kcns='kubectl config set-context --current --namespace'
+export KUBECONFIG=~/.kube/config
+alias k="kubectl"
+alias ka="kubectl apply -f"
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias kdel="kubectl delete"
+alias kl="kubectl logs"
+alias kgpo="kubectl get pod"
+alias kgd="kubectl get deployments"
+alias kc="kubectx"
+alias kns="kubens"
+alias kl="kubectl logs -f"
+alias ke="kubectl exec -it"
+alias kcns='kubectl config set-context --current --namespace'
+
+# ExpressVPN Aliases
+alias vpnon="expressvpn connect"
+alias vpnoff="expressvpn disconnect"
+alias vpnstatus="expressvpn status"
+alias vpnlist="expressvpn list"
+alias vpnservers="expressvpn list all"
+
 
 # Networking
 alias nm="nmap -sC -sV -oN nmap"
