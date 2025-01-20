@@ -124,6 +124,10 @@ CreateFiveDesktop(){
     }
 }
 
+CloseApp() {
+    WinClose("A")
+}
+
 ; #^!+1::MoveOrGotoDesktopNumber(0)
 ; #^!+2::MoveOrGotoDesktopNumber(1)
 ; #^!+3::MoveOrGotoDesktopNumber(2)
@@ -164,3 +168,5 @@ F15 UP:: GoToNextDesktop()
 #+3:: MoveCurrentWindowToDesktop(2)
 #+4:: MoveCurrentWindowToDesktop(3)
 #+5:: MoveCurrentWindowToDesktop(4)
+
+#w:: CloseApp()
