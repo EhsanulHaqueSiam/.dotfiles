@@ -125,7 +125,10 @@ CreateFiveDesktop(){
 }
 
 CloseApp() {
-    WinClose("A")
+    if WinExist("A") {
+        WinActivate("A")
+        WinClose("A")
+    }
 }
 
 MaximizeFocusWindow() {
