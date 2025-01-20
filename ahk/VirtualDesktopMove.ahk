@@ -136,7 +136,7 @@ MinimizeFocusWindow() {
     WinMinimize("A")
 }
 
-#UP:: MaximizeFocusWindow()
+; #UP:: MaximizeFocusWindow()
 ; #DOWN:: MinimizeFocusWindow()
 
 ; #^!+1::MoveOrGotoDesktopNumber(0)
