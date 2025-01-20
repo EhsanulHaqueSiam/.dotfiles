@@ -128,6 +128,17 @@ CloseApp() {
     WinClose("A")
 }
 
+MaximizeFocusWindow() {
+    WinMaximize("A")
+}
+
+MinimizeFocusWindow() {
+    WinMinimize("A")
+}
+
+#UP:: MaximizeFocusWindow()
+; #DOWN:: MinimizeFocusWindow()
+
 ; #^!+1::MoveOrGotoDesktopNumber(0)
 ; #^!+2::MoveOrGotoDesktopNumber(1)
 ; #^!+3::MoveOrGotoDesktopNumber(2)
